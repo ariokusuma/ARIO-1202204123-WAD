@@ -1,6 +1,13 @@
 
+tailwind.config = {
+    darkMode: 'class',
+}
 
 
+function toggleDarkMode() {
+    var element = document.getElementById("parent");
+    element.classList.toggle("dark");
+  }
 
 // Function to handle smooth scrolling
 // function smoothScroll(target) {
@@ -37,19 +44,21 @@ window.addEventListener('scroll', function() {
         // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
         if (rect.top - detectionMargin >= 0 && rect.bottom + detectionMargin <= window.innerHeight) {
         navLinks.forEach(function(link) {
-            link.classList.remove('btn-active', 'bg-[#66C8FF]', 'text-white');
+            link.classList.remove('btn-active', 'bg-[#66C8FF]', 'text-white', 'dark:hover:bg-[#0F71A8]', 'dark:bg-[#208ECB]');
         });
         const activeLink = document.querySelector(`.bagian[href="#${sectionId}"]`);
         // const activeLink = document.querySelector(`.bagian[href="#${sectionId.toLowerCase()}"]`);
         if (activeLink) {
-            activeLink.classList.add('btn-active', 'bg-[#66C8FF]', 'text-white');
+            activeLink.classList.add('btn-active', 'bg-[#66C8FF]', 'text-white', 'dark:hover:bg-[#0F71A8]', 'dark:bg-[#208ECB]');
         }
         } else {
         const activeLink = document.querySelector(`.bagian[href="#${sectionId}"]`);
         // const activeLink = document.querySelector(`.bagian[href="#${sectionId.toLowerCase()}"]`);
         if (activeLink) {
-            activeLink.classList.remove('btn-active', 'bg-[#66C8FF]', 'text-white');
+            activeLink.classList.remove('btn-active', 'bg-[#66C8FF]', 'text-white', 'dark:hover:bg-[#0F71A8]','dark:bg-[#208ECB]');
         }
         }
     });
 });
+
+
